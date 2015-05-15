@@ -43,7 +43,7 @@ public class App extends Application {
         super.onCreate();
         Log.w("App", "onCreate()");
         setupGraph();
-//        analyticsManager.registerAppEnter();
+        analyticsManager.registerAppEnter();
     }
 
     private void setupGraph() {
