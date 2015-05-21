@@ -88,7 +88,7 @@ public class LoginActivity extends BaseActivity implements LoginView, View.OnCli
     public void navigateToHome() {
         Toast.makeText(this, getResources().getString(R.string.msg_login_success), Toast.LENGTH_SHORT).show();
         startActivity(new Intent(this, MainActivity.class));
-        finish();
+//        finish();
     }
 
     @Override
