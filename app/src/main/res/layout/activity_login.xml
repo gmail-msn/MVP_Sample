@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:hint="@string/user_name"
-        android:text="teddy"
+        android:text="abc"
         android:drawableLeft="@drawable/ic_action_person"
         android:drawablePadding="8dp"
         />
