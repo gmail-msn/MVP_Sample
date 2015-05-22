@@ -20,11 +20,13 @@ public class ShowPresenterImpl implements ShowPresenter, ShowResultListener {
     @Override
     public void onResume(Activity context, int position) {
         this.context = context;
+        showView.showProgress();
         showInteractor.showResultMessage(this, context, position);
     }
 
     @Override
     public void showResultMessage(String message) {
         this.showView.showMessage(message);
+        showView.hideProgress();
     }
 }

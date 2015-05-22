@@ -50,6 +50,10 @@ public class ShowInteractorImpl implements ShowInteractor {
                 JSONObject merchObj = service.getMerchantInfo();
                 message = merchObj.toString();
                 break;
+            case 5:
+                JSONObject paymentObj = service.getPaymentInfo();
+                message = paymentObj.toString();
+                break;
             default:
                 break;
         }

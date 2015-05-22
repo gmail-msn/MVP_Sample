@@ -33,6 +33,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:hint="@string/user_name"
+        android:text="teddy"
         android:drawableLeft="@drawable/ic_action_person"
         android:drawablePadding="8dp"
         />
@@ -42,6 +43,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:hint="@string/password"
+        android:text="123456"
         android:inputType="textPassword"
         android:drawableLeft="@drawable/ic_action_accounts"
         android:drawablePadding="8dp"

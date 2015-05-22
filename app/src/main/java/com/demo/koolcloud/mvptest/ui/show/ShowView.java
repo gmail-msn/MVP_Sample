@@ -24,4 +24,6 @@ import java.util.List;
 
 public interface ShowView {
     public void showMessage(String message);
+    public void showProgress();
+    public void hideProgress();
 }

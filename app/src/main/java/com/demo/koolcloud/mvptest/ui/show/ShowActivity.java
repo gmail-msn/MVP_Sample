@@ -2,6 +2,7 @@
 package com.demo.koolcloud.mvptest.ui.show;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -18,6 +19,7 @@ public class ShowActivity extends BaseActivity implements ShowView {
     @Inject
     ShowPresenter presenter;
     private TextView resultTextView;
+    private ProgressBar progressBar;
 
     @Override
     protected void setupComponent(AppComponent appComponent) {
@@ -33,6 +35,7 @@ public class ShowActivity extends BaseActivity implements ShowView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show);
         resultTextView = (TextView) findViewById(R.id.resultTextView);
+        progressBar = (ProgressBar) findViewById(R.id.progress);
     }
 
     @Override protected void onResume() {
@@ -43,5 +46,15 @@ public class ShowActivity extends BaseActivity implements ShowView {
 
     @Override public void showMessage(String message) {
         resultTextView.setText(message);
+    }
+
+    @Override
+    public void showProgress() {
+        progressBar.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideProgress() {
+        progressBar.setVisibility(View.GONE);
     }
 }
