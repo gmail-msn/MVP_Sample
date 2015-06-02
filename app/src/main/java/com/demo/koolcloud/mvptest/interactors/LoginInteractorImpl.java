@@ -67,6 +67,6 @@ public class LoginInteractorImpl implements LoginInteractor {
                     }
                 }
             }
-        }, 2000);
+        }, 500);
     }
 }

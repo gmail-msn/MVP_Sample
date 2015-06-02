@@ -22,7 +22,7 @@ public class FindItemsInteractorImpl implements FindItemsInteractor {
             @Override public void run() {
                 listener.onFinished(createArrayList(context));
             }
-        }, 2000);
+        }, 500);
     }
 
     private List<String> createArrayList(Activity context) {

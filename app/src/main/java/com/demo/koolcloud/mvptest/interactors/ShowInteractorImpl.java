@@ -1,18 +1,15 @@
 package com.demo.koolcloud.mvptest.interactors;
 
 import android.app.Activity;
-import android.content.res.Resources;
 import android.os.Handler;
 import android.util.Log;
 
-import com.demo.koolcloud.mvptest.R;
-import com.demo.koolcloud.mvptest.ui.main.OnFinishedListener;
 import com.demo.koolcloud.mvptest.ui.show.ShowResultListener;
+import com.demo.koolcloud.mvptest.util.DateUtil;
 
 import org.json.JSONObject;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.Date;
 
 import cn.koolcloud.services.SmartPosServices;
 
@@ -27,7 +24,7 @@ public class ShowInteractorImpl implements ShowInteractor {
             @Override public void run() {
                 listener.showResultMessage(getMessage(context, position));
             }
-        }, 2000);
+        }, 500);
     }
 
     private String getMessage(Activity context, final int position) {
@@ -39,7 +36,9 @@ public class ShowInteractorImpl implements ShowInteractor {
                 message = cashPayResult.toString();
                 break;
             case 2:
-                JSONObject recordListObj = service.getRecordList("20150508", "20150508");
+                Date todayDate = new Date();
+                String todayStr = DateUtil.formatDate(todayDate, "yyyyMMdd");
+                JSONObject recordListObj = service.getRecordList(todayStr, todayStr);
                 message = recordListObj.toString();
                 break;
             case 3:
